@@ -6,6 +6,8 @@ import {
   EachResultParticipant,
   PlayAgain,
   PlayAgainContainer,
+  ResultImageContainer,
+  ResultContainer,
 } from './styledComponents'
 
 const Play = props => {
@@ -53,24 +55,30 @@ const Play = props => {
       )}
 
       {!isPlaying && (
-        <PlayerContainer>
-          <EachResultParticipant>
-            <ResultLabel>YOU</ResultLabel>
-            <ResultView as="img" src={choices[0].imageUrl} alt="your choice" />
-          </EachResultParticipant>
-          <EachResultParticipant>
-            <ResultLabel>OPPONENT</ResultLabel>
-            <ResultView
-              as="img"
-              src={choices[1].imageUrl}
-              alt="opponent choice"
-            />
-          </EachResultParticipant>
+        <ResultContainer>
+          <ResultImageContainer>
+            <EachResultParticipant>
+              <ResultLabel>YOU</ResultLabel>
+              <ResultView
+                as="img"
+                src={choices[0].imageUrl}
+                alt="your choice"
+              />
+            </EachResultParticipant>
+            <EachResultParticipant>
+              <ResultLabel>OPPONENT</ResultLabel>
+              <ResultView
+                as="img"
+                src={choices[1].imageUrl}
+                alt="opponent choice"
+              />
+            </EachResultParticipant>
+          </ResultImageContainer>
           <PlayAgainContainer>
             <ResultLabel>{result}</ResultLabel>
             <PlayAgain onClick={clickPlayAgain}>Play Again</PlayAgain>
           </PlayAgainContainer>
-        </PlayerContainer>
+        </ResultContainer>
       )}
     </PlayerContainer>
   )

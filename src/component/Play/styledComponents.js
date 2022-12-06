@@ -42,3 +42,16 @@ export const PlayAgainContainer = styled.div`
   justify-content: center;
   align-items: center;
 `
+
+export const ResultImageContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const ResultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
